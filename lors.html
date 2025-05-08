@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Style Test</title>
+    <script src="https://kit.fontawesome.com/834ba97cca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional specific styles for leadership test */
+        .leadership-traits {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .trait-card {
+            width: 48%;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .trait-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .trait-card h3 {
+            color: #298852;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .progress-container {
+            background: #f0f0f0;
+            border-radius: 20px;
+            height: 20px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #298852, #66edb5);
+            border-radius: 20px;
+            transition: width 1s ease;
+        }
+        
+        .result-details {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="menu-bar">
+            <div class="logo">Know Me Well <i class="fa-solid fa-heart"></i></div>
+            <ul class="menu-list">
+                <li><a href="index.html">MBTI Personality Test</a></li>
+                <li><a class="active" href="lors.html">Am I a good leader or supporter?</a></li>
+                <li><a href="lovelanguage.html">About My Love language Test</a></li>
+                <li><a href="#aboutmbti">About Each MBTI Personality</a></li>
+                <li><a href="#blog">Read Articles</a></li>   
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="quiz-container">
+        <div class="header">
+            <img src="cartoon_girl.png" width="100">
+            <h1>Leadership Style Assessment</h1>
+        </div>
+        
+        <form id="leadership-form">
+            <div class="question">
+                <h3>1. In group projects, you typically:</h3>
+                <input type="radio" name="q1" value="leader" id="q1-a"> <label for="q1-a">A) Take charge and assign roles</label><br>
+                <input type="radio" name="q1" value="follower" id="q1-b"> <label for="q1-b">B) Prefer to be given specific tasks</label><br>
+            </div>
+            
+            <div class="question">
+                <h3>2. When facing a difficult decision, you:</h3>
+                <input type="radio" name="q2" value="leader" id="q2-a"> <label for="q2-a">A) Trust your judgment and make the call</label><br>
+                <input type="radio" name="q2" value="follower" id="q2-b"> <label for="q2-b">B) Seek advice from others before deciding</label><br>
+            </div>
+
+            <div class="question">
+                <h3>3. In meetings, you usually:</h3>
+                <input type="radio" name="q3" value="leader" id="q3-a"> <label for="q3-a">A) Speak up frequently with ideas</label><br>
+                <input type="radio" name="q3" value="follower" id="q3-b"> <label for="q3-b">B) Listen more than you speak</label><br>
+            </div>
+
+            <div class="question">
+                <h3>4. When you see a problem that needs solving, you:</h3>
+                <input type="radio" name="q4" value="leader" id="q4-a"> <label for="q4-a">A) Immediately start working on solutions</label><br>
+                <input type="radio" name="q4" value="follower" id="q4-b"> <label for="q4-b">B) Wait to see if someone else addresses it</label><br>
+            </div>
+
+            <div class="question">
+                <h3>5. Your approach to rules is:</h3>
+                <input type="radio" name="q5" value="leader" id="q5-a"> <label for="q5-a">A) Willing to bend them if needed to achieve goals</label><br>
+                <input type="radio" name="q5" value="follower" id="q5-b"> <label for="q5-b">B) Prefer to follow established procedures</label><br>
+            </div>
+
+            <div class="question">
+                <h3>6. When working in a team, you're more likely to:</h3>
+                <input type="radio" name="q6" value="leader" id="q6-a"> <label for="q6-a">A) Delegate tasks to others</label><br>
+                <input type="radio" name="q6" value="follower" id="q6-b"> <label for="q6-b">B) Take direction from others</label><br>
+            </div>
+
+            <div class="question">
+                <h3>7. Your comfort zone is:</h3>
+                <input type="radio" name="q7" value="leader" id="q7-a"> <label for="q7-a">A) Being responsible for outcomes</label><br>
+                <input type="radio" name="q7" value="follower" id="q7-b"> <label for="q7-b">B) Contributing without ultimate responsibility</label><br>
+            </div>
+
+            <div class="question">
+                <h3>8. When learning something new, you prefer to:</h3>
+                <input type="radio" name="q8" value="leader" id="q8-a"> <label for="q8-a">A) Figure it out your own way</label><br>
+                <input type="radio" name="q8" value="follower" id="q8-b"> <label for="q8-b">B) Be shown exactly how to do it</label><br>
+            </div>
+
+            <div class="question">
+                <h3>9. In social situations, you typically:</h3>
+                <input type="radio" name="q9" value="leader" id="q9-a"> <label for="q9-a">A) Initiate conversations and activities</label><br>
+                <input type="radio" name="q9" value="follower" id="q9-b"> <label for="q9-b">B) Join in when invited</label><br>
+            </div>
+
+            <div class="question">
+                <h3>10. When giving feedback, you:</h3>
+                <input type="radio" name="q10" value="leader" id="q10-a"> <label for="q10-a">A) Feel comfortable providing constructive criticism</label><br>
+                <input type="radio" name="q10" value="follower" id="q10-b"> <label for="q10-b">B) Hesitate to criticize others' work</label><br>
+            </div>
+
+            <button type="submit">Discover My Style</button>
+        </form>
+    </div>
+
+    <div id="leadership-result" style="display:none;">
+        <h2>Your Leadership Style: <span id="style-name"></span></h2>
+        <div class="leadership-traits">
+            <div class="trait-card">
+                <h3>Leadership Tendency</h3>
+                <div class="progress-container">
+                    <div id="leader-bar" class="progress-bar" style="width: 0%"></div>
+                </div>
+                <p><span id="leader-percent">0</span>% Leader</p>
+            </div>
+            <div class="trait-card">
+                <h3>Support Tendency</h3>
+                <div class="progress-container">
+                    <div id="follower-bar" class="progress-bar" style="width: 0%"></div>
+                </div>
+                <p><span id="follower-percent">0</span>% Supporter</p>
+            </div>
+        </div>
+        
+        <div class="result-details">
+            <h3>About Your Style</h3>
+            <p id="style-description"></p>
+            
+            <h3>Your Strengths</h3>
+            <ul id="style-strengths"></ul>
+            
+            <h3>Potential Growth Areas</h3>
+            <ul id="style-weaknesses"></ul>
+            
+            <h3>Ideal Roles For You</h3>
+            <ul id="style-roles"></ul>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('leadership-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let leaderScore = 0;
+            let followerScore = 0;
+            
+            // Calculate scores
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                
+                if (!selected) {
+                    alert('Please answer all questions before submitting.');
+                    return;
+                }
+                
+                if (selected.value === 'leader') {
+                    leaderScore++;
+                } else {
+                    followerScore++;
+                }
+            }
+            
+            // Calculate percentages
+            const total = leaderScore + followerScore;
+            const leaderPercent = Math.round((leaderScore / total) * 100);
+            const followerPercent = 100 - leaderPercent;
+            
+            // Display results
+            showLeadershipResult(leaderPercent, followerPercent);
+        });
+        
+        function showLeadershipResult(leaderPercent, followerPercent) {
+            // Update progress bars
+            document.getElementById('leader-bar').style.width = `${leaderPercent}%`;
+            document.getElementById('follower-bar').style.width = `${followerPercent}%`;
+            document.getElementById('leader-percent').textContent = leaderPercent;
+            document.getElementById('follower-percent').textContent = followerPercent;
+            
+            // Determine style
+            let styleName, description, strengths, weaknesses, roles;
+            
+            if (leaderPercent >= 70) {
+                styleName = "Natural Leader";
+                description = "You have strong leadership tendencies and naturally take charge in most situations. People likely look to you for direction and decision-making.";
+                strengths = [
+                    "Excellent at making decisions quickly",
+                    "Comfortable taking responsibility",
+                    "Good at motivating and directing others",
+                    "Strong initiative and proactive attitude"
+                ];
+                weaknesses = [
+                    "May sometimes dominate conversations",
+                    "Could benefit from more delegation",
+                    "Might overlook others' ideas occasionally"
+                ];
+                roles = [
+                    "Management positions",
+                    "Entrepreneur/Founder roles",
+                    "Team lead or supervisor",
+                    "Project coordinator"
+                ];
+            } 
+            else if (leaderPercent >= 40) {
+                styleName = "Situational Leader";
+                description = "You're adaptable - able to lead when needed but also comfortable following when appropriate. You strike a good balance between both styles.";
+                strengths = [
+                    "Flexible in different team dynamics",
+                    "Good at both giving and taking direction",
+                    "Understand multiple perspectives",
+                    "Can step up when leadership is needed"
+                ];
+                weaknesses = [
+                    "May sometimes hesitate to take charge",
+                    "Could be more assertive in leadership moments",
+                    "Might struggle with consistent authority"
+                ];
+                roles = [
+                    "Team-based collaborative roles",
+                    "Middle management",
+                    "Consulting positions",
+                    "Roles requiring both independence and teamwork"
+                ];
+            }
+            else {
+                styleName = "Strong Supporter";
+                description = "You prefer supportive roles where you can contribute without being in the spotlight. You're an excellent team player who helps leaders succeed.";
+                strengths = [
+                    "Excellent at executing plans",
+                    "Great attention to detail",
+                    "Strong collaborative skills",
+                    "Reliable and consistent"
+                ];
+                weaknesses = [
+                    "May avoid taking initiative",
+                    "Could develop more confidence in decision-making",
+                    "Might hesitate to voice opinions"
+                ];
+                roles = [
+                    "Specialist/technical roles",
+                    "Support staff positions",
+                    "Roles with clear guidelines",
+                    "Team contributor roles"
+                ];
+            }
+            
+            // Display results
+            document.getElementById('style-name').textContent = styleName;
+            document.getElementById('style-description').textContent = description;
+            
+            const strengthsList = document.getElementById('style-strengths');
+            strengthsList.innerHTML = '';
+            strengths.forEach(strength => {
+                const li = document.createElement('li');
+                li.textContent = strength;
+                strengthsList.appendChild(li);
+            });
+            
+            const weaknessesList = document.getElementById('style-weaknesses');
+            weaknessesList.innerHTML = '';
+            weaknesses.forEach(weakness => {
+                const li = document.createElement('li');
+                li.textContent = weakness;
+                weaknessesList.appendChild(li);
+            });
+            
+            const rolesList = document.getElementById('style-roles');
+            rolesList.innerHTML = '';
+            roles.forEach(role => {
+                const li = document.createElement('li');
+                li.textContent = role;
+                rolesList.appendChild(li);
+            });
+            
+            // Show result section
+            document.getElementById('leadership-result').style.display = 'block';
+            document.getElementById('leadership-result').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

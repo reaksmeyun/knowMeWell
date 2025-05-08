@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI Personality Test</title>
+    <script src="https://kit.fontawesome.com/834ba97cca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="menu-bar">
+            <div class="logo">Know Me Well <i class="fa-solid fa-heart"></i></div>
+            <ul class="menu-list">
+                <li><a href="index.html">MBTI Personality Test</a></li>
+                <li><a class="active" href="lors.html">Am I a good leader or supporter?</a></li>
+                <li><a href="lovelanguage.html">About My Love language Test</a></li>
+                <li><a href="#aboutmbti">About Each MBTI Personality</a></li>
+                <li><a href="#blog">Read Articles</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+    <div class="quiz-container">
+        <div class="header">
+            <img src="girl.png" width="100">
+            <h1>Take the MBTI Personality Test</h1>
+        </div>
+        <form id="quiz-form">
+            <!-- Extraversion (E) vs Introversion (I) Questions -->
+            <div class="question">
+                <h3>1. After a long week, you prefer to:</h3>
+                <input type="radio" name="q1" value="E" id="q1-a"> <label for="q1-a">A) Spend time with friends or at a social event</label><br>
+                <input type="radio" name="q1" value="I" id="q1-b"> <label for="q1-b">B) Relax at home alone or with close family</label><br>
+            </div>
+            
+            <div class="question">
+                <h3>2. In group settings, you usually:</h3>
+                <input type="radio" name="q2" value="E" id="q2-a"> <label for="q2-a">A) Speak out freely and enjoy being the center of attention</label><br>
+                <input type="radio" name="q2" value="I" id="q2-b"> <label for="q2-b">B) Listen more and speak only when you have something important to say</label><br>
+            </div>
+
+            <div class="question">
+                <h3>3. You feel most energized when you:</h3>
+                <input type="radio" name="q3" value="E" id="q3-a"> <label for="q3-a">A) Are interacting with other people</label><br>
+                <input type="radio" name="q3" value="I" id="q3-b"> <label for="q3-b">B) Have time alone to reflect or pursue personal interests</label><br>
+            </div>
+
+            <!-- Sensing (S) vs Intuition (N) Questions -->
+            <div class="question">
+                <h3>4. When learning something new, you prefer:</h3>
+                <input type="radio" name="q4" value="S" id="q4-a"> <label for="q4-a">A) Concrete facts and practical applications</label><br>
+                <input type="radio" name="q4" value="N" id="q4-b"> <label for="q4-b">B) Theoretical concepts and future possibilities</label><br>
+            </div>
+
+            <div class="question">
+                <h3>5. You're more likely to trust:</h3>
+                <input type="radio" name="q5" value="S" id="q5-a"> <label for="q5-a">A) Your past experiences and what has worked before</label><br>
+                <input type="radio" name="q5" value="N" id="q5-b"> <label for="q5-b">B) Your intuition and new innovative approaches</label><br>
+            </div>
+
+            <div class="question">
+                <h3>6. When describing events, you tend to:</h3>
+                <input type="radio" name="q6" value="S" id="q6-a"> <label for="q6-a">A) Focus on specific details and what actually happened</label><br>
+                <input type="radio" name="q6" value="N" id="q6-b"> <label for="q6-b">B) Talk about patterns, meanings, and possibilities</label><br>
+            </div>
+
+            <!-- Thinking (T) vs Feeling (F) Questions -->
+            <div class="question">
+                <h3>7. When making decisions, you usually:</h3>
+                <input type="radio" name="q7" value="T" id="q7-a"> <label for="q7-a">A) Weigh the pros and cons objectively</label><br>
+                <input type="radio" name="q7" value="F" id="q7-b"> <label for="q7-b">B) Consider how it will affect people's feelings</label><br>
+            </div>
+
+            <div class="question">
+                <h3>8. In conflicts, you value more:</h3>
+                <input type="radio" name="q8" value="T" id="q8-a"> <label for="q8-a">A) Truth and fairness, even if it's uncomfortable</label><br>
+                <input type="radio" name="q8" value="F" id="q8-b"> <label for="q8-b">B) Harmony and maintaining relationships</label><br>
+            </div>
+
+            <div class="question">
+                <h3>9. You believe it's more important to be:</h3>
+                <input type="radio" name="q9" value="T" id="q9-a"> <label for="q9-a">A) Logically correct</label><br>
+                <input type="radio" name="q9" value="F" id="q9-b"> <label for="q9-b">B) Compassionate and understanding</label><br>
+            </div>
+
+            <!-- Judging (J) vs Perceiving (P) Questions -->
+            <div class="question">
+                <h3>10. Your work style is typically:</h3>
+                <input type="radio" name="q10" value="J" id="q10-a"> <label for="q10-a">A) Planned and organized, with clear deadlines</label><br>
+                <input type="radio" name="q10" value="P" id="q10-b"> <label for="q10-b">B) Flexible and spontaneous, adapting as you go</label><br>
+            </div>
+
+            <div class="question">
+                <h3>11. When working on a project, you prefer to:</h3>
+                <input type="radio" name="q11" value="J" id="q11-a"> <label for="q11-a">A) Have a clear plan and stick to it</label><br>
+                <input type="radio" name="q11" value="P" id="q11-b"> <label for="q11-b">B) Keep options open and adjust as needed</label><br>
+            </div>
+
+            <div class="question">
+                <h3>12. Your living space is usually:</h3>
+                <input type="radio" name="q12" value="J" id="q12-a"> <label for="q12-a">A) Neat and organized, with everything in its place</label><br>
+                <input type="radio" name="q12" value="P" id="q12-b"> <label for="q12-b">B) Comfortably messy, with things where you need them</label><br>
+            </div>
+
+            <!-- Additional questions for better accuracy -->
+            <div class="question">
+                <h3>13. When meeting new people, you usually:</h3>
+                <input type="radio" name="q13" value="E" id="q13-a"> <label for="q13-a">A) Enjoy initiating conversations and making connections</label><br>
+                <input type="radio" name="q13" value="I" id="q13-b"> <label for="q13-b">B) Prefer to let others initiate and take time to open up</label><br>
+            </div>
+
+            <div class="question">
+                <h3>14. When solving problems, you're more likely to:</h3>
+                <input type="radio" name="q14" value="S" id="q14-a"> <label for="q14-a">A) Focus on practical, step-by-step solutions</label><br>
+                <input type="radio" name="q14" value="N" id="q14-b"> <label for="q14-b">B) Look for creative, outside-the-box solutions</label><br>
+            </div>
+
+            <div class="question">
+                <h3>15. Your friends would describe you as more:</h3>
+                <input type="radio" name="q15" value="J" id="q15-a"> <label for="q15-a">A) Decisive and structured</label><br>
+                <input type="radio" name="q15" value="P" id="q15-b"> <label for="q15-b">B) Adaptable and spontaneous</label><br>
+            </div>
+
+            <button type="submit">See My Result</button>
+        </form>
+    </div>
+
+    <div id="result" style="display:none;">
+        <h2>Your Personality Type: <span id="personality-name"></span></h2>
+        <img id="personality-image" src="" alt="Personality Image" />
+        <h3>Strengths:</h3>
+        <ul id="strengths"></ul>
+        <h3>Weaknesses:</h3>
+        <ul id="weaknesses"></ul>
+        <h3>Suggested Majors:</h3>
+        <ul id="majors"></ul>
+        <h3>Suggested Careers:</h3>
+        <ul id="careers"></ul>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

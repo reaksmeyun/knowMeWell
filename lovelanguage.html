@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Language Test</title>
+    <script src="https://kit.fontawesome.com/834ba97cca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles specific to love language test */
+        .love-language-results {
+            display: none;
+            margin-top: 40px;
+        }
+        
+        .language-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .language-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-top: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .language-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .language-card.primary {
+            border-top: 4px solid #298852;
+            background: #f9f9f9;
+        }
+        
+        .language-card h3 {
+            color: #298852;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .language-icon {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .progress-container {
+            background: #f0f0f0;
+            border-radius: 20px;
+            height: 15px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #298852, #66edb5);
+            border-radius: 20px;
+        }
+        
+        .score {
+            text-align: right;
+            font-weight: bold;
+            color: #298852;
+        }
+        
+        .language-description {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .language-cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="menu-bar">
+            <div class="menu-bar">
+                <div class="logo">Know Me Well <i class="fa-solid fa-heart"></i></div>
+                <ul class="menu-list">
+                    <li><a href="index.html">MBTI Personality Test</a></li>
+                    <li><a class="active" href="lors.html">Am I a good leader or supporter?</a></li>
+                    <li><a href="#lovelanguage">About My Love language Test</a></li>
+                    <li><a href="#aboutmbti">About Each MBTI Personality</a></li>
+                    <li><a href="#blog">Read Articles</a></li>   
+                </ul>
+            </div>
+    </nav>
+    
+    <div class="quiz-container">
+        <div class="header">
+            <img src="https://libertypatriotpress.com/wp-content/uploads/2024/02/7f54426e-c991-43fe-b90f-6e674122ecb9.sized-1000x1000-1.jpeg" width="100">
+            <h1>Discover Your Love Language</h1>
+        </div>
+        
+        <form id="love-language-form">
+            <div class="question">
+                <h3>1. I feel most loved when someone...</h3>
+                <input type="radio" name="q1" value="words" id="q1-a"> <label for="q1-a">A) Tells me how much they appreciate me</label><br>
+                <input type="radio" name="q1" value="time" id="q1-b"> <label for="q1-b">B) Spends quality time with me</label><br>
+                <input type="radio" name="q1" value="gifts" id="q1-c"> <label for="q1-c">C) Gives me meaningful gifts</label><br>
+                <input type="radio" name="q1" value="acts" id="q1-d"> <label for="q1-d">D) Does helpful things for me</label><br>
+                <input type="radio" name="q1" value="touch" id="q1-e"> <label for="q1-e">E) Shows physical affection</label><br>
+            </div>
+            
+            <div class="question">
+                <h3>2. When I'm upset, what helps most is when my partner...</h3>
+                <input type="radio" name="q2" value="words" id="q2-a"> <label for="q2-a">A) Says encouraging words to me</label><br>
+                <input type="radio" name="q2" value="time" id="q2-b"> <label for="q2-b">B) Listens attentively without distractions</label><br>
+                <input type="radio" name="q2" value="gifts" id="q2-c"> <label for="q2-c">C) Brings me something to cheer me up</label><br>
+                <input type="radio" name="q2" value="acts" id="q2-d"> <label for="q2-d">D) Takes care of something I need done</label><br>
+                <input type="radio" name="q2" value="touch" id="q2-e"> <label for="q2-e">E) Holds me or gives me physical comfort</label><br>
+            </div>
+
+            <div class="question">
+                <h3>3. I feel most appreciated when...</h3>
+                <input type="radio" name="q3" value="words" id="q3-a"> <label for="q3-a">A) I receive heartfelt compliments</label><br>
+                <input type="radio" name="q3" value="time" id="q3-b"> <label for="q3-b">B) Someone gives me their undivided attention</label><br>
+                <input type="radio" name="q3" value="gifts" id="q3-c"> <label for="q3-c">C) I receive thoughtful presents</label><br>
+                <input type="radio" name="q3" value="acts" id="q3-d"> <label for="q3-d">D) Someone helps me with my responsibilities</label><br>
+                <input type="radio" name="q3" value="touch" id="q3-e"> <label for="q3-e">E) I receive hugs, kisses, or other physical affection</label><br>
+            </div>
+
+            <div class="question">
+                <h3>4. What makes me feel most valued in a relationship?</h3>
+                <input type="radio" name="q4" value="words" id="q4-a"> <label for="q4-a">A) Hearing "I love you" and other affirmations</label><br>
+                <input type="radio" name="q4" value="time" id="q4-b"> <label for="q4-b">B) Having deep conversations together</label><br>
+                <input type="radio" name="q4" value="gifts" id="q4-c"> <label for="q4-c">C) Receiving symbolic gifts that show they know me</label><br>
+                <input type="radio" name="q4" value="acts" id="q4-d"> <label for="q4-d">D) Having my partner help with chores or tasks</label><br>
+                <input type="radio" name="q4" value="touch" id="q4-e"> <label for="q4-e">E) Frequent physical closeness and intimacy</label><br>
+            </div>
+
+            <div class="question">
+                <h3>5. I feel most connected to my partner when...</h3>
+                <input type="radio" name="q5" value="words" id="q5-a"> <label for="q5-a">A) They express their feelings for me verbally</label><br>
+                <input type="radio" name="q5" value="time" id="q5-b"> <label for="q5-b">B) We share new experiences together</label><br>
+                <input type="radio" name="q5" value="gifts" id="q5-c"> <label for="q5-c">C) They surprise me with something special</label><br>
+                <input type="radio" name="q5" value="acts" id="q5-d"> <label for="q5-d">D) They take initiative to make my life easier</label><br>
+                <input type="radio" name="q5" value="touch" id="q5-e"> <label for="q5-e">E) We're physically close, even without words</label><br>
+            </div>
+
+            <div class="question">
+                <h3>6. The best way to celebrate special occasions is...</h3>
+                <input type="radio" name="q6" value="words" id="q6-a"> <label for="q6-a">A) Writing me a heartfelt letter or card</label><br>
+                <input type="radio" name="q6" value="time" id="q6-b"> <label for="q6-b">B) Spending uninterrupted time together</label><br>
+                <input type="radio" name="q6" value="gifts" id="q6-c"> <label for="q6-c">C) Giving me a meaningful gift</label><br>
+                <input type="radio" name="q6" value="acts" id="q6-d"> <label for="q6-d">D) Doing something special for me</label><br>
+                <input type="radio" name="q6" value="touch" id="q6-e"> <label for="q6-e">E) Physical intimacy and closeness</label><br>
+            </div>
+
+            <div class="question">
+                <h3>7. When we're apart, I feel most loved when my partner...</h3>
+                <input type="radio" name="q7" value="words" id="q7-a"> <label for="q7-a">A) Sends sweet texts or voice messages</label><br>
+                <input type="radio" name="q7" value="time" id="q7-b"> <label for="q7-b">B) Makes time for video calls or visits</label><br>
+                <input type="radio" name="q7" value="gifts" id="q7-c"> <label for="q7-c">C) Sends me a care package or gift</label><br>
+                <input type="radio" name="q7" value="acts" id="q7-d"> <label for="q7-d">D) Takes care of something for me back home</label><br>
+                <input type="radio" name="q7" value="touch" id="q7-e"> <label for="q7-e">E) Expresses how much they miss physical contact</label><br>
+            </div>
+
+            <div class="question">
+                <h3>8. I know my partner is thinking about me when they...</h3>
+                <input type="radio" name="q8" value="words" id="q8-a"> <label for="q8-a">A) Tell me they're thinking about me</label><br>
+                <input type="radio" name="q8" value="time" id="q8-b"> <label for="q8-b">B) Make time to connect during a busy day</label><br>
+                <input type="radio" name="q8" value="gifts" id="q8-c"> <label for="q8-c">C) Bring me something they saw that reminded them of me</label><br>
+                <input type="radio" name="q8" value="acts" id="q8-d"> <label for="q8-d">D) Do something helpful without being asked</label><br>
+                <input type="radio" name="q8" value="touch" id="q8-e"> <label for="q8-e">E) Initiate physical contact when we're together</label><br>
+            </div>
+
+            <div class="question">
+                <h3>9. What romantic gesture means the most to you?</h3>
+                <input type="radio" name="q9" value="words" id="q9-a"> <label for="q9-a">A) Love notes or poems</label><br>
+                <input type="radio" name="q9" value="time" id="q9-b"> <label for="q9-b">B) A planned date night with deep conversation</label><br>
+                <input type="radio" name="q9" value="gifts" id="q9-c"> <label for="q9-c">C) A thoughtful, personalized gift</label><br>
+                <input type="radio" name="q9" value="acts" id="q9-d"> <label for="q9-d">D) My partner taking care of something I dread doing</label><br>
+                <input type="radio" name="q9" value="touch" id="q9-e"> <label for="q9-e">E) Cuddling or physical affection without expectation</label><br>
+            </div>
+
+            <div class="question">
+                <h3>10. I feel most secure in a relationship when...</h3>
+                <input type="radio" name="q10" value="words" id="q10-a"> <label for="q10-a">A) My partner regularly expresses their love verbally</label><br>
+                <input type="radio" name="q10" value="time" id="q10-b"> <label for="q10-b">B) We have consistent quality time together</label><br>
+                <input type="radio" name="q10" value="gifts" id="q10-c"> <label for="q10-c">C) My partner gives me tokens of affection</label><br>
+                <input type="radio" name="q10" value="acts" id="q10-d"> <label for="q10-d">D) My partner shows their love through actions</label><br>
+                <input type="radio" name="q10" value="touch" id="q10-e"> <label for="q10-e">E) We maintain regular physical closeness</label><br>
+            </div>
+
+            <button type="submit">Discover My Love Language</button>
+        </form>
+        
+        <div id="love-language-results" class="love-language-results">
+            <h2>Your Love Language Profile</h2>
+            <p>Based on your answers, here's how you prefer to give and receive love:</p>
+            
+            <div class="language-cards">
+                <div class="language-card" id="words-card">
+                    <h3><i class="fas fa-comment-dots language-icon"></i> Words of Affirmation</h3>
+                    <div class="progress-container">
+                        <div id="words-bar" class="progress-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="score"><span id="words-score">0</span>%</div>
+                    <div class="language-description">
+                        You feel most loved when your partner expresses their feelings through spoken or written words - compliments, love notes, or frequent "I love you"s.
+                    </div>
+                </div>
+                
+                <div class="language-card" id="time-card">
+                    <h3><i class="fas fa-heart language-icon"></i> Quality Time</h3>
+                    <div class="progress-container">
+                        <div id="time-bar" class="progress-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="score"><span id="time-score">0</span>%</div>
+                    <div class="language-description">
+                        Undivided attention and meaningful conversations make you feel valued. You cherish activities done together without distractions.
+                    </div>
+                </div>
+                
+                <div class="language-card" id="gifts-card">
+                    <h3><i class="fas fa-gift language-icon"></i> Receiving Gifts</h3>
+                    <div class="progress-container">
+                        <div id="gifts-bar" class="progress-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="score"><span id="gifts-score">0</span>%</div>
+                    <div class="language-description">
+                        Thoughtful presents that show you were remembered mean the world to you. It's not about the cost but the symbolism behind the gift.
+                    </div>
+                </div>
+                
+                <div class="language-card" id="acts-card">
+                    <h3><i class="fas fa-hands-helping language-icon"></i> Acts of Service</h3>
+                    <div class="progress-container">
+                        <div id="acts-bar" class="progress-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="score"><span id="acts-score">0</span>%</div>
+                    <div class="language-description">
+                        Actions speak louder than words for you. When your partner helps with tasks or responsibilities, you feel deeply cared for.
+                    </div>
+                </div>
+                
+                <div class="language-card" id="touch-card">
+                    <h3><i class="fas fa-hand-holding-heart language-icon"></i> Physical Touch</h3>
+                    <div class="progress-container">
+                        <div id="touch-bar" class="progress-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="score"><span id="touch-score">0</span>%</div>
+                    <div class="language-description">
+                        Physical connection through hugs, holding hands, or intimacy makes you feel secure and loved in your relationship.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-details">
+                <h3>What This Means For Your Relationships</h3>
+                <p id="primary-language-description"></p>
+                
+                <h3>Tips For Communicating Your Needs</h3>
+                <ul id="communication-tips"></ul>
+                
+                <h3>How To Recognize Other Love Languages</h3>
+                <ul id="recognizing-others"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('love-language-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Initialize scores for each love language
+            const scores = {
+                words: 0,
+                time: 0,
+                gifts: 0,
+                acts: 0,
+                touch: 0
+            };
+            
+            // Calculate scores
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                
+                if (!selected) {
+                    alert('Please answer all questions before submitting.');
+                    return;
+                }
+                
+                scores[selected.value]++;
+            }
+            
+            // Calculate percentages
+            const total = 10; // 10 questions
+            const percentages = {
+                words: Math.round((scores.words / total) * 100),
+                time: Math.round((scores.time / total) * 100),
+                gifts: Math.round((scores.gifts / total) * 100),
+                acts: Math.round((scores.acts / total) * 100),
+                touch: Math.round((scores.touch / total) * 100)
+            };
+            
+            // Display results
+            showLoveLanguageResults(percentages);
+        });
+        
+        function showLoveLanguageResults(percentages) {
+            // Update progress bars and scores
+            document.getElementById('words-bar').style.width = `${percentages.words}%`;
+            document.getElementById('time-bar').style.width = `${percentages.time}%`;
+            document.getElementById('gifts-bar').style.width = `${percentages.gifts}%`;
+            document.getElementById('acts-bar').style.width = `${percentages.acts}%`;
+            document.getElementById('touch-bar').style.width = `${percentages.touch}%`;
+            
+            document.getElementById('words-score').textContent = percentages.words;
+            document.getElementById('time-score').textContent = percentages.time;
+            document.getElementById('gifts-score').textContent = percentages.gifts;
+            document.getElementById('acts-score').textContent = percentages.acts;
+            document.getElementById('touch-score').textContent = percentages.touch;
+            
+            // Determine primary love language
+            const languages = Object.keys(percentages);
+            let primaryLanguage = languages[0];
+            
+            languages.forEach(lang => {
+                if (percentages[lang] > percentages[primaryLanguage]) {
+                    primaryLanguage = lang;
+                }
+            });
+            
+            // Highlight primary language card
+            document.querySelectorAll('.language-card').forEach(card => {
+                card.classList.remove('primary');
+            });
+            document.getElementById(`${primaryLanguage}-card`).classList.add('primary');
+            
+            // Set primary language description and tips
+            setPrimaryLanguageContent(primaryLanguage);
+            
+            // Show results section
+            document.getElementById('love-language-results').style.display = 'block';
+            document.getElementById('love-language-results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function setPrimaryLanguageContent(language) {
+            const descriptions = {
+                words: {
+                    primary: "Words of Affirmation are clearly your primary love language. Verbal expressions of love and appreciation mean everything to you.",
+                    tips: [
+                        "Clearly ask for the words you need to hear",
+                        "Share examples of affirmations that mean the most to you",
+                        "Express how much verbal communication affects you",
+                        "Create a shared list of meaningful phrases"
+                    ],
+                    recognizing: [
+                        "Your partner may show love differently - try to notice their efforts",
+                        "Practice gratitude for other love languages you receive",
+                        "Remember actions can also be expressions of love"
+                    ]
+                },
+                time: {
+                    primary: "Quality Time is your primary way of experiencing love. Undivided attention and shared experiences make you feel most connected.",
+                    tips: [
+                        "Schedule regular quality time without distractions",
+                        "Communicate what 'quality time' looks like for you",
+                        "Suggest activities that facilitate connection",
+                        "Establish tech-free zones or times together"
+                    ],
+                    recognizing: [
+                        "Notice when your partner makes time for you in small ways",
+                        "Appreciate that others may show love through different languages",
+                        "Balance your need for time with your partner's needs"
+                    ]
+                },
+                gifts: {
+                    primary: "Receiving Gifts is your primary love language. Thoughtful presents that show you were remembered make you feel deeply loved.",
+                    tips: [
+                        "Explain that it's the thought behind gifts that matters",
+                        "Share wish lists or meaningful gift ideas",
+                        "Appreciate even small tokens of affection",
+                        "Express how specific gifts made you feel"
+                    ],
+                    recognizing: [
+                        "Understand that gifts may not be your partner's natural expression",
+                        "Value the love behind non-gift expressions",
+                        "Notice when your partner gives in other ways"
+                    ]
+                },
+                acts: {
+                    primary: "Acts of Service speak love loudest to you. When your partner helps or does things for you, you feel truly cared for and supported.",
+                    tips: [
+                        "Specifically mention which acts mean the most",
+                        "Appreciate both big and small helpful actions",
+                        "Share your to-do list or areas where help would be meaningful",
+                        "Notice and acknowledge efforts your partner makes"
+                    ],
+                    recognizing: [
+                        "Understand others may not naturally express love through service",
+                        "Appreciate other expressions of love",
+                        "Recognize that different acts may be your partner's way of showing care"
+                    ]
+                },
+                touch: {
+                    primary: "Physical Touch is your primary love language. Appropriate physical connection makes you feel secure, loved, and emotionally bonded.",
+                    tips: [
+                        "Communicate your preferred types of non-sexual touch",
+                        "Establish regular physical connection rituals",
+                        "Express how specific touches make you feel",
+                        "Discuss comfort levels and boundaries openly"
+                    ],
+                    recognizing: [
+                        "Understand your partner may have different touch needs",
+                        "Appreciate other ways your partner shows love",
+                        "Respect that physical affection may not come naturally to everyone"
+                    ]
+                }
+            };
+            
+            document.getElementById('primary-language-description').textContent = descriptions[language].primary;
+            
+            const tipsList = document.getElementById('communication-tips');
+            tipsList.innerHTML = '';
+            descriptions[language].tips.forEach(tip => {
+                const li = document.createElement('li');
+                li.textContent = tip;
+                tipsList.appendChild(li);
+            });
+            
+            const recognizingList = document.getElementById('recognizing-others');
+            recognizingList.innerHTML = '';
+            descriptions[language].recognizing.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                recognizingList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
