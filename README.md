@@ -1,7 +1,8 @@
-KnowMeWell Overview
-A responsive web app offering three key psychological assessments:
+KnowMeWell 
+A responsive web app offering psychological and personalit.y assessments
+click here to test: https://reaksmeyun.github.io/knowMeWell/
 
-Core Tests:
+Core Tests: 
 
 🧠 MBTI Personality Test (16 personality types)
 
