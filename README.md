@@ -17,7 +17,7 @@ KnowMeWell is a **responsive web app** offering psychological and personality as
 ---
 
 ## Key Features
-- 📱 **Mobile-friendly design** – Optimized for all devices so you can explore anytime, anywhere.  
+- 📱 **User-friendly design** – Optimized for all devices so you can explore anytime, anywhere.  
 - 📊 **Visualized results** – Interactive charts and progress bars make your personality insights easy to understand.  
 - 💡 **Personalized insights** – Tailored explanations help you understand your strengths, weaknesses, and tendencies.  
 - 🎨 **Clean & consistent interface** – Focus on exploring yourself without distractions.  
