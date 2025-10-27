@@ -18,4 +18,5 @@ click here to test: https://reaksmeyun.github.io/knowMeWell/
 ## Tech:
 - Frontend: HTML/CSS/JS
 - Client-side processing
-** Purpose: ** Help users gain self-awareness about their personality, work style, and relationship preferences through scientifically-validated assessments.
+  
+**Purpose:** Help users gain self-awareness about their personality, work style, and relationship preferences through scientifically-validated assessments.
